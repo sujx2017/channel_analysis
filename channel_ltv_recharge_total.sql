@@ -11,7 +11,6 @@ row format delimited
 fields terminated by ','
 stored as textfile;
 
-hive -e"
 set  hive.exec.dynamic.partition=true; 
 set  hive.exec.dynamic.partition.mode=nonstrict;
 set  hive.exec.max.dynamic.partitions=1000;
@@ -65,4 +64,4 @@ from
     group by
         user_id
     )c
-    on a.userid = c.user_id;"
+    on a.userid = c.user_id;
